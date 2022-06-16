@@ -4,19 +4,21 @@ import { StyleSheet } from 'react-native'; //---
 // import { StyleSheet, Text, View } from 'react-native'; //---
 import { NavigationContainer, TabActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
-import { ProductsList } from './screens/ProductsList';
-import { ProductDetails } from './screens/ProductDetails';
+// import { ProductsList } from './screens/ProductsList';
+// import { ProductDetails } from './screens/ProductDetails';
 import { Cart } from './screens/Cart';
-import { CartIcon } from './components/CartIcon';
-import { CartProvider } from './CartContext';
+// import { CartIcon } from './components/CartIcon';
+// import { CartProvider } from './CartContext';
 
-import HomeScreen from './screens/HomeScreen';
-import DetailScreen from './screens/DetailScreen';
-import Cart from './screens/Cart';
+import HomeScreen from './HomeScreen';
 import Profile from './screens/Profile';
+import DetailScreen from './screens/DetailScreen';
+// import Cart from './screens/Cart';
 import Ionic from "react-native-vector-icons/Ionicons"
 
 // import { StatusBar } from 'expo-status-bar';
@@ -27,9 +29,10 @@ const Tab = createBottomTabNavigator();
 
 function App() {
   return (
-    <CartProvider>
+    // <CartProvider>
+    <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        {/* <Stack.Navigator>
           <Stack.Screen name='Products' component={ProductsList}
             options={({ navigation }) => ({
               title: 'Products',
@@ -49,6 +52,9 @@ function App() {
             headerRight: () => <CartIcon navigation={navigation}/>,
           })} />
         </Stack.Navigator>
+        </NavigationContainer> 
+        <NavigationContainer>*/}
+          
         <Tab.Navigator screenOptions={({route}) => ({tabBarIcon: 
           ({focused, size,colour}) => {let iconName;
           if(route.name === "Home"){
@@ -70,7 +76,8 @@ function App() {
           <Tab.Screen name="Profile" component={Profile}/>
         </Tab.Navigator>
       </NavigationContainer>
-    </CartProvider>
+      </SafeAreaProvider>
+    // </CartProvider>
   );
 }
 
@@ -78,6 +85,49 @@ function App() {
 const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
+  },
+
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#e8ca46',
+  },
+
+  img: {
+    width: 150,
+    height: 200,
+    bottom: 20,
+  },
+
+  button: {
+    width: 315,
+    height: 70,
+    alignItems: "center",
+    backgroundColor: "red",
+    borderRadius: 5,
+
+
+  },
+  buttonText:{
+    display: 'flex',
+    fontSize: 50,
+    alignItems:'center',
+    color:'white',
+    justifyContent: 'center',
+
+  },
+  cranStyl:{
+    paddingTop: 30,
+    fontWeight: 'bold',
+    fontSize: 30,
+    paddingBottom: 55,
+
+  },
+  skp:{
+    fontWeight: 'bold',
+    fontSize: 20,
   }
+
 });
 export default App;
