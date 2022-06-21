@@ -8,12 +8,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-
 // import { ProductsList } from './screens/ProductsList';
 // import { ProductDetails } from './screens/ProductDetails';
 import { Cart } from './screens/Cart';
-// import { CartIcon } from './components/CartIcon';
-// import { CartProvider } from './CartContext';
+import { CartIcon } from './components/CartIcon';//--
+import { CartProvider } from './CartContext';
 
 import HomeScreen from './HomeScreen';
 import Profile from './screens/Profile';
@@ -29,7 +28,7 @@ const Tab = createBottomTabNavigator();
 
 function App() {
   return (
-    // <CartProvider>
+    <CartProvider>
     <SafeAreaProvider>
       <NavigationContainer>
         {/* <Stack.Navigator>
@@ -70,14 +69,19 @@ function App() {
           },
         
           })}>
-          <Tab.Screen name="Home" component={HomeScreen}/>
+          <Tab.Screen name="Home" component={HomeScreen}
+          options={({ navigation }) => ({
+            title: 'Products',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>
+          })}/>
           <Tab.Screen name="Details" component={DetailScreen}/>
           <Tab.Screen name="Cart" component={Cart}/>
           <Tab.Screen name="Profile" component={Profile}/>
         </Tab.Navigator>
       </NavigationContainer>
       </SafeAreaProvider>
-    // </CartProvider>
+    </CartProvider>
   );
 }
 

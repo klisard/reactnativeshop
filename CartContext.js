@@ -40,6 +40,6 @@ export function CartProvider(props) {
         <CartContext.Provider
             value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice}}>
                 {props.children}
-            </CartContext.Provider>
+        </CartContext.Provider>
     );
 }
