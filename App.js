@@ -70,17 +70,18 @@ function App() {
         
           })}>
           <Tab.Screen name="Home" component={HomeScreen}
-          options={({ navigation }) => ({
-            title: 'Products',
-            headerTitleStyle: styles.headerTitle,
-            headerRight: () => <CartIcon navigation={navigation}/>
-          })}/>
+          // options={({ navigation }) => ({
+          //   title: 'Products',
+          //   headerTitleStyle: styles.headerTitle,
+          //   headerRight: () => <CartIcon navigation={navigation}/>
+          // })}
+          />
           <Tab.Screen name="Details" component={DetailScreen}/>
           <Tab.Screen name="Cart" component={Cart}/>
           <Tab.Screen name="Profile" component={Profile}/>
         </Tab.Navigator>
       </NavigationContainer>
-      </SafeAreaProvider>
+    </SafeAreaProvider>
     </CartProvider>
   );
 }
