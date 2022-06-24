@@ -75,13 +75,7 @@ function App() {
           })
           
         }>
-          <Tab.Screen name="Home" component={HomeScreen}
-          // options={({ navigation }) => ({
-          //   title: 'Products',
-          //   headerTitleStyle: styles.headerTitle,
-          //   headerRight: () => <CartIcon navigation={navigation}/>
-          // })}
-          />
+          <Tab.Screen name="Home" component={HomeScreen}/>
           {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
           <Tab.Screen name="Cart" component={Cart}
             // options={({ navigation }) => ({
