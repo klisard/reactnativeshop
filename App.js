@@ -96,7 +96,7 @@ function App() {
           <Tab.Screen name="Home" component={HomeScreen}/>
           {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
           <Tab.Screen name="Learn" component={Learn}/>
-          <Tab.Screen name="Profile" component={Login}/>
+          <Tab.Screen name="Profile" component={Dashboard}/>
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
