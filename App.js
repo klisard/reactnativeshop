@@ -24,7 +24,6 @@ import Ionic from "react-native-vector-icons/Ionicons"
 
 // import { Login } from './screens/login';
 
-import Constants from 'expo-constants';
 import firebase from './firebase';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
