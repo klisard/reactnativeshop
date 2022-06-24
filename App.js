@@ -17,6 +17,7 @@ import { CartProvider } from './CartContext';
 import HomeScreen from './HomeScreen';
 import Profile from './screens/Profile';
 import DetailScreen from './screens/DetailScreen';
+import Learn from './screens/Learn';
 // import Cart from './screens/Cart';
 import Ionic from "react-native-vector-icons/Ionicons"
 
@@ -79,6 +80,7 @@ function App() {
           <Tab.Screen name="Details" component={DetailScreen}/>
           <Tab.Screen name="Cart" component={Cart}/>
           <Tab.Screen name="Profile" component={Profile}/>
+          <Tab.Screen name="Learn" component={Learn}/>
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
