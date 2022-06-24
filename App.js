@@ -26,7 +26,6 @@ const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
-
 function App() {
   return (
     <CartProvider>
@@ -56,7 +55,8 @@ function App() {
         <NavigationContainer>*/}
           
         <Tab.Navigator screenOptions={({route}) => ({tabBarIcon: 
-          ({focused, size,colour}) => {let iconName;
+          ({focused, size,colour}) => {
+          let iconName;
           if(route.name === "Home"){
               iconName = focused ? 'ios-home': 'ios-home-outline'; 
           } else if(route.name === "Details"){
@@ -65,11 +65,11 @@ function App() {
             iconName = focused ? 'cart': 'cart-outline'; 
           } else if(route.name === "Profile"){
           iconName = focused ? 'man': 'man-outline'; 
-          }
+          };
           return <Ionic name={iconName} size={size} colour={colour}/>
           },
-        
-          })}>
+          })
+        }>
           <Tab.Screen name="Home" component={HomeScreen}
           // options={({ navigation }) => ({
           //   title: 'Products',
@@ -77,7 +77,7 @@ function App() {
           //   headerRight: () => <CartIcon navigation={navigation}/>
           // })}
           />
-          <Tab.Screen name="Details" component={DetailScreen}/>
+          {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
           <Tab.Screen name="Cart" component={Cart}/>
           <Tab.Screen name="Profile" component={Profile}/>
           <Tab.Screen name="Learn" component={Learn}/>

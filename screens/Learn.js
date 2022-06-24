@@ -10,6 +10,9 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//adnroid ndoshta
+// import 'react-native-gesture-handler';
+
 //import { createAppContainer, createStackNavigator } from 'react-navigation';
 import flatlistdata from '../flatListData.json';
 import Info from '../components/Info';
