@@ -13,7 +13,7 @@ import flatlistdata from '../flatListData.json';
 export default function Info({ navigation, route }) {
   return (
     <ScrollView>
-      <View style={{ backgroundColor: 'orange', height: 180, zIndex: 0 }}>
+      <View style={{ backgroundColor: '#abd5d6', height: 180, zIndex: 0 }}>
         <View
           style={{
             alignSelf: 'center',
