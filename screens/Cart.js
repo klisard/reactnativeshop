@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import { CartContext } from '../CartContext';
 import { PayPalButton } from "react-paypal-button-v2";
+import { ScrollView } from 'react-native-gesture-handler';
 export function Cart({ navigation }) {
     const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
 
@@ -36,6 +37,7 @@ export function Cart({ navigation }) {
             keyExtractor={(item) => item.product.id.toString()}
             ListFooterComponent={Totals}
         />
+        <ScrollView>
         <PayPalButton
         amount="0.01"
         // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
@@ -51,6 +53,7 @@ export function Cart({ navigation }) {
           });
         }}
       />
+      </ScrollView>
       </View>
     );
 }
