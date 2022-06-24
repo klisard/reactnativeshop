@@ -54,8 +54,8 @@ function App() {
         </NavigationContainer> 
         <NavigationContainer>*/}
           
-        <Tab.Navigator screenOptions={({route}) => ({tabBarIcon: 
-          ({focused, size,colour}) => {
+        <Tab.Navigator screenOptions={({route}) => ({
+          tabBarIcon: ({focused, size,colour}) => {
           let iconName;
           if(route.name === "Home"){
               iconName = focused ? 'ios-home': 'ios-home-outline'; 
@@ -70,7 +70,10 @@ function App() {
           };
           return <Ionic name={iconName} size={size} colour={colour}/>
           },
+          headerStyle: { backgroundColor: 'orange' }
+          
           })
+          
         }>
           <Tab.Screen name="Home" component={HomeScreen}
           // options={({ navigation }) => ({
@@ -78,6 +81,10 @@ function App() {
           //   headerTitleStyle: styles.headerTitle,
           //   headerRight: () => <CartIcon navigation={navigation}/>
           // })}
+          options={{
+            headerStyle: {
+              backgroundColor: 'orange',
+            }}}
           />
           {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
           <Tab.Screen name="Cart" component={Cart}/>

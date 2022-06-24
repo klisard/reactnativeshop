@@ -10,9 +10,6 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-//adnroid ndoshta
-// import 'react-native-gesture-handler';
-
 //import { createAppContainer, createStackNavigator } from 'react-navigation';
 import flatlistdata from '../flatListData.json';
 import Info from '../components/Info';
@@ -22,9 +19,11 @@ const Stack = createStackNavigator();
 export default function LearnList({ navigate, route }) {
   return (
     <Stack.Navigator
-        screenOptions={{
-            headerShown: false
-        }}>
+        //hidding header of learn screen, cause problem on going back 
+        // screenOptions={{
+        //     headerShown: false
+        // }}
+        >
       <Stack.Screen
         name="Learn"
         component={Learn}
