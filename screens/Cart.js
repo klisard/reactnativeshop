@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet, ScrollView } from 'react-native';
 import { CartContext } from '../CartContext';
 import { PayPalButton } from "react-paypal-button-v2";
-import { ScrollView } from 'react-native-gesture-handler';
+// import { ScrollView } from 'react-native-gesture-handler';
 export function Cart({ navigation }) {
     const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
 
