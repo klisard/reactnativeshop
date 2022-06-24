@@ -21,6 +21,9 @@ import Learn from './screens/Learn';
 // import Cart from './screens/Cart';
 import Ionic from "react-native-vector-icons/Ionicons"
 
+
+import { Login } from './screens/login';
+
 // import { StatusBar } from 'expo-status-bar';
 const Stack = createNativeStackNavigator();
 
@@ -77,19 +80,8 @@ function App() {
         }>
           <Tab.Screen name="Home" component={HomeScreen}/>
           {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
-          <Tab.Screen name="Cart" component={Cart}
-            // options={({ navigation }) => ({
-            //   title: 'My cart',
-            //   headerTitleStyle: styles.headerTitle,
-            //   headerRight: () => <CartIcon navigation={navigation}/>,
-              
-            // })}
-            onPress={() => {
-              navigation.navigate('Cart');
-            }}
-          />
           <Tab.Screen name="Learn" component={Learn}/>
-          <Tab.Screen name="Profile" component={Profile}/>
+          <Tab.Screen name="Profile" component={Login}/>
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
