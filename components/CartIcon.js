@@ -17,9 +17,10 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 8,
     backgroundColor: 'orange',
-    height: 32,
+    // height: 32,
+    height: 42,
     padding: 12,
-    borderRadius: 32 / 2,
+    borderRadius: 42 / 2, //byHeight
     alignItems: 'center',
     justifyContent: 'center',
   },
