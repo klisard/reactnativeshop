@@ -1,6 +1,8 @@
 // import * as firebase from 'firebase';
 // import { initializeApp } from 'firebase/app';
-import firebase from 'firebase/compat/app'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 
 const firebaseConfig = {
@@ -12,6 +14,7 @@ const firebaseConfig = {
   messagingSenderId: "195108837316",
   appId: "1:195108837316:web:ef6657c3f2651656b03691"
 };
+
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
