@@ -81,13 +81,19 @@ function App() {
           //   headerTitleStyle: styles.headerTitle,
           //   headerRight: () => <CartIcon navigation={navigation}/>
           // })}
-          options={{
-            headerStyle: {
-              backgroundColor: 'orange',
-            }}}
           />
           {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
-          <Tab.Screen name="Cart" component={Cart}/>
+          <Tab.Screen name="Cart" component={Cart}
+            // options={({ navigation }) => ({
+            //   title: 'My cart',
+            //   headerTitleStyle: styles.headerTitle,
+            //   headerRight: () => <CartIcon navigation={navigation}/>,
+              
+            // })}
+            onPress={() => {
+              navigation.navigate('Cart');
+            }}
+          />
           <Tab.Screen name="Learn" component={Learn}/>
           <Tab.Screen name="Profile" component={Profile}/>
         </Tab.Navigator>
