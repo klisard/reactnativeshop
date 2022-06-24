@@ -65,6 +65,8 @@ function App() {
             iconName = focused ? 'cart': 'cart-outline'; 
           } else if(route.name === "Profile"){
           iconName = focused ? 'man': 'man-outline'; 
+          } else if(route.name === "Learn"){
+          iconName = focused ? 'book': 'book-outline'; 
           };
           return <Ionic name={iconName} size={size} colour={colour}/>
           },
@@ -79,8 +81,8 @@ function App() {
           />
           {/* <Tab.Screen name="Details" component={DetailScreen}/> */}
           <Tab.Screen name="Cart" component={Cart}/>
-          <Tab.Screen name="Profile" component={Profile}/>
           <Tab.Screen name="Learn" component={Learn}/>
+          <Tab.Screen name="Profile" component={Profile}/>
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

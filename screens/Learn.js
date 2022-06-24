@@ -21,7 +21,10 @@ const Stack = createStackNavigator();
 
 export default function LearnList({ navigate, route }) {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+        screenOptions={{
+            headerShown: false
+        }}>
       <Stack.Screen
         name="Learn"
         component={Learn}
@@ -51,7 +54,7 @@ function Learn({ navigation, route }) {
         keyExtractor={(item, index) => item.id}
         numColumns={2}
         const
-        data={flatlistdata.catpics}
+        data={flatlistdata.articles}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
