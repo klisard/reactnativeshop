@@ -22,7 +22,13 @@ import Learn from './screens/Learn';
 import Ionic from "react-native-vector-icons/Ionicons"
 
 
-import { Login } from './screens/login';
+// import { Login } from './screens/login';
+
+import Constants from 'expo-constants';
+import firebase from './firebase';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import { AuthContext } from './context/auth-context';
 
 // import { StatusBar } from 'expo-status-bar';
 const Stack = createNativeStackNavigator();
@@ -30,8 +36,17 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function App() {
+  const [user, setUser] = React.useState(null); 
+
   return (
     <CartProvider>
+
+    <AuthContext.Provider value={[user, setUser]}>
+        {
+          user ? <Dashboard /> : <Login />
+        }
+    </AuthContext.Provider>
+
     <SafeAreaProvider>
       <NavigationContainer>
         {/* <Stack.Navigator>
