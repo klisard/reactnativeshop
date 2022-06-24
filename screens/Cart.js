@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import { CartContext } from '../CartContext';
+import { PayPalButton } from "react-paypal-button-v2";
 export function Cart({ navigation }) {
     const {items, getItemsCount, getTotalPrice} = useContext(CartContext);
 
@@ -26,6 +27,7 @@ export function Cart({ navigation }) {
     }
     
     return (
+      <View style={styles.cartLinePay}>
         <FlatList
             style={styles.itemsList}
             contentContainerStyle={styles.itemsListContainer}
@@ -34,6 +36,22 @@ export function Cart({ navigation }) {
             keyExtractor={(item) => item.product.id.toString()}
             ListFooterComponent={Totals}
         />
+        <PayPalButton
+        amount="0.01"
+        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+        onSuccess={(details, data) => {
+          alert("Transaction completed by " + details.payer.name.given_name);
+
+          // OPTIONAL: Call your server to save the transaction
+          return fetch("/paypal-transaction-complete", {
+            method: "post",
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
+        }}
+      />
+      </View>
     );
 }
 
@@ -70,4 +88,11 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginHorizontal: 8,
   },
+  cartLinePay:{
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    paddingLeft: 150,
+    paddingRight: 150,
+  }
 });

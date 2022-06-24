@@ -25,11 +25,11 @@ export default function LearnList({ navigate, route }) {
         // }}
         >
       <Stack.Screen
-        name="Learn"
+      name = "Our Articles"
         component={Learn}
         options={{
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: '#abd5d6',
           },
         }}
       />
@@ -38,7 +38,7 @@ export default function LearnList({ navigate, route }) {
         component={Info}
         options={{
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: '#abd5d6',
           },
         }}
       />
@@ -68,7 +68,7 @@ function Learn({ navigation, route }) {
               padding: 10,
               margin: '2.5%',
               width: '45%',
-              backgroundColor: 'orange',
+              backgroundColor: '#abd5d6',
             }}>
             <Image source={{ uri: item.uri }} style={styles.itemImage} />
             <Text style={styles.heading}>{item.caption}</Text>
